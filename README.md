@@ -2,6 +2,6 @@
 
 A counter app
 
-## Getting Started
+## Description
 
 App for counting upwards or downwards.
