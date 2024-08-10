@@ -14,6 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: Colors.lightBlueAccent,
+        fontFamily:'Roboto',
         useMaterial3: true,
       ),
       home: Homepage(),
@@ -35,22 +37,22 @@ class _MyWidgetState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Counter"),
-        backgroundColor: Colors.yellow
+        backgroundColor: Colors.yellow,
 
       ),
       body:Center(
         child: Column(
+
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(count.toString(),style: TextStyle(fontSize: 60),),
-            SizedBox(height: 20),
+            SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                
-                Text("mybuttons"),
-                SizedBox(width: 10),
+                Text("My  Buttons",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,fontStyle: FontStyle.normal,fontFamily: 'Roboto'),),
+                SizedBox(width: 30),
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
@@ -59,6 +61,7 @@ class _MyWidgetState extends State<Homepage> {
                   },
                   child: Icon(Icons.arrow_upward_rounded),
                 ),
+                SizedBox(width: 30),
                 FloatingActionButton(
                   onPressed: () {
                     setState((){
