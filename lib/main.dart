@@ -12,10 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        
+        fontFamily: 'RobotoCondensed',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         scaffoldBackgroundColor: Colors.lightBlueAccent,
-        fontFamily:'Roboto',
         useMaterial3: true,
       ),
       home: Homepage(),
@@ -51,7 +50,7 @@ class _MyWidgetState extends State<Homepage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("My  Buttons",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,fontStyle: FontStyle.normal,fontFamily: 'Roboto'),),
+                Text("My  Buttons",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,fontStyle: FontStyle.normal,fontFamily: 'RobotoCondensed'),),
                 SizedBox(width: 30),
                 FloatingActionButton(
                   onPressed: () {
@@ -59,16 +58,19 @@ class _MyWidgetState extends State<Homepage> {
                       count++;
                     });
                   },
-                  child: Icon(Icons.arrow_upward_rounded),
+                  child: Text('UP',style: TextStyle(fontWeight: FontWeight.bold)),
                 ),
                 SizedBox(width: 30),
                 FloatingActionButton(
                   onPressed: () {
                     setState((){
-                      count--;
+                      if (count>0){
+                        count--;
+                      }
+                        
                     });
                   },
-                  child: Icon(Icons.arrow_downward_rounded),
+                  child: Text("DOWN",style: TextStyle(fontWeight: FontWeight.bold),),
                 ),
               ],
             ),
